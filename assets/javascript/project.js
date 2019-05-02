@@ -64,8 +64,6 @@ $("#submit").on("click", function(e) {
         });
     });
     
-
-
 // //Extract spotify generated token from redirect url
 // var hash = window.location.href.substr(1); //url of the current page
 // var arHash = hash.split('='); //this splits the url at the = sign

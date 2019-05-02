@@ -20,8 +20,7 @@
     crossorigin="anonymous"></script>
   <!--AJAX CDN-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!--Firebase CDN-->
-  <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
+
 </head>
 
 <body>
@@ -71,15 +70,15 @@
       </div>
     </div>
     <!--Row containing quote info-->
-    <div class="row fader-start fader-none2" id="row-pad">
+    <div class="row" id="row-pad">
       <!--This div will contain the quote-->
-      <div class="col s4">
+      <div class="col s12">
         <h4 id="generate"></h4>
       </div>
-      <!--Spacer column-->
-      <div class="col s2"></div>
-      <!--This div will contain the quote information-->
-      <div class="col s6 fader-none2" id="track-table">
+    </div>
+    <div class="row">
+      <div class="col s12 fader-none2" id="track-table">
+        <h3 class="teal-text teal-lighten-2">Quote Info</h3>
         <table>
           <thead>
             <tr>
@@ -96,6 +95,8 @@
         <table>
       </div>
     </div>
+      
+      
   </div>
 </body>
 <!--Javascipt styling link-->

@@ -2,7 +2,6 @@
 //Weather app api key
 var APIKey = "166a433c57516f51dfab1f7edaed8413";
 
-var weatherResponses = [];
 
 // On click function that retrieves user location input and determines which spotify query to initiate
 $("#submit").on("click", function(e) {
@@ -27,14 +26,6 @@ $("#submit").on("click", function(e) {
         //displays basic city info on main page
         $("#city-input").text("City: " + city);
         $("#temp-input").text("Temp: " + response.main.temp + " degrees");
-
-        //Pushes Weather info to an array
-        weatherResponses.push(response.name);
-        weatherResponses.push(response.main.temp);
-        weatherResponses.push(response.weather[0].main);
-        weatherResponses.push(response.main.humidity);
-        console.log(weatherResponses);
-        weatherStore();
 
         // Generate spotify conten and transfer content to HTML        
         if (response.main.temp >= 70) {

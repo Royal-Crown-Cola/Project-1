@@ -20,24 +20,25 @@
     crossorigin="anonymous"></script>
   <!--AJAX CDN-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
-<body>
+<body class="body">
   <!--Nav Bar-->
   <nav class="my-nav">
     <div class="nav-wrapper #4db6ac teal lighten-2">
       <a href="#" class="brand-logo custom-font"><i id="my-pad" class="material-icons">cloud</i>Mood Quotes</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="#input">My Quotes</a></li>
-        <li><a href="#weather">My Weather</a></li>
+          <li><a id="login" href="#">Login</a></li>
+        <li><a id="fact" href="#">Daily Fact</a></li>
+        
       </ul>
     </div>
   </nav>
   <!--Home page Image and logo render div-->
   <div class="container">
     <div class="row" id="row-pad">
-      <div class="col s4">
+      <div class="col s4" id="gif-input">
         <img id="img-size" class="fader-start fader-none"
           src="https://cmgpbpeyeonthestorm.files.wordpress.com/2018/02/download.gif" alt="weather gif">
       </div>
@@ -55,18 +56,21 @@
     </div>
     <!--Row with user city input and submit button that makes the call to the weather api and also calls spotify AJAX-->
     <div class="row fader-start fader-none" id="row-pad">
-      <div class="col s4">
+      <div class="col s3">
         <!--Takes in user input and submits-->
         <input class="city-input" id="input_text" type="text" data-length="10" placeholder="Enter Your City">
         <a class="waves-effect waves-light btn" id="submit">Submit</a>
       </div>
       <!--City name will be stored here-->
-      <div class="col s4">
-        <h3 class="teal-text teal-lighten-2" id="city-input"></h3>
+      <div class="col s3">
+        <h5 class="teal-text teal-lighten-2" id="city-input"></h5>
       </div>
       <!--City temperature will be stored here-->
-      <div class="col s4">
-        <h3 class="teal-text teal-lighten-2" id="temp-input"></h3>
+      <div class="col s3">
+        <h5 class="teal-text teal-lighten-2" id="temp-input"></h5>
+      </div>
+      <div class="col s3">
+        <h5 class="teal-text teal-lighten-2" id="for-input"></h5>
       </div>
     </div>
     <!--Row containing quote info-->
@@ -76,6 +80,13 @@
         <h4 id="generate"></h4>
       </div>
     </div>
+    <!--Row that allows you to save a quote to a database but requires login information-->
+    <div class="row" id="row-pad">
+      <div class="col s12 fader-start fader-none2" id="btn-align">
+        <button class="btn-style">Save This Quote</button>
+      </div>
+    </div>
+    <!--Row that gives you the quote information-->
     <div class="row">
       <div class="col s12 fader-none2" id="track-table">
         <h3 class="teal-text teal-lighten-2">Quote Info</h3>
@@ -105,3 +116,5 @@
 <script type="text/javascript" src="assets/javascript/project.js"></script>
 
 </html>
+
+

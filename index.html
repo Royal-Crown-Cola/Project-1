@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project 1</title>
+  <!--CSS Rest-->
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <!--Google Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <!--Materialize CDN's-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!--Custom CSS-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <!--jQuery CDN-->
+  <script src="https://code.jquery.com/jquery-3.4.0.js" integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo="
+    crossorigin="anonymous"></script>
+  <!--AJAX CDN-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!--Firebase CDN-->
+  <script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
+</head>
+
+<body>
+  <!--Nav Bar-->
+  <nav class="my-nav">
+    <div class="nav-wrapper #4db6ac teal lighten-2">
+      <a href="#" class="brand-logo custom-font"><i id="my-pad" class="material-icons">cloud</i>Mood Quotes</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="#input">My Quotes</a></li>
+        <li><a href="#weather">My Weather</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!--Home page Image and logo render div-->
+  <div class="container">
+    <div class="row" id="row-pad">
+      <div class="col s4">
+        <img id="img-size" class="fader-start fader-none"
+          src="https://cmgpbpeyeonthestorm.files.wordpress.com/2018/02/download.gif" alt="weather gif">
+      </div>
+      <!-- <div class="col s1"></div> -->
+      <div class="col s8">
+        <h1 class="teal-text teal-lighten-2" id="logo"></h1>
+      </div>
+    </div>
+    <!--Div with user instructions-->
+    <div class="row fader-start fader-none" id="row-pad">
+      <!-- <div class="col s5"></div> -->
+      <div class="col s12">
+        <h3 class="teal-text teal-lighten-2">Find Your Weather And Get Inspired</h3>
+      </div>
+    </div>
+    <!--Row with user city input and submit button that makes the call to the weather api and also calls spotify AJAX-->
+    <div class="row fader-start fader-none" id="row-pad">
+      <div class="col s4">
+        <!--Takes in user input and submits-->
+        <input class="city-input" id="input_text" type="text" data-length="10" placeholder="Enter Your City">
+        <a class="waves-effect waves-light btn" id="submit">Submit</a>
+      </div>
+      <!--City name will be stored here-->
+      <div class="col s4">
+        <h3 class="teal-text teal-lighten-2" id="city-input"></h3>
+      </div>
+      <!--City temperature will be stored here-->
+      <div class="col s4">
+        <h3 class="teal-text teal-lighten-2" id="temp-input"></h3>
+      </div>
+    </div>
+    <!--Row containing quote info-->
+    <div class="row fader-start fader-none2" id="row-pad">
+      <!--This div will contain the quote-->
+      <div class="col s4">
+        <h4 id="generate"></h4>
+      </div>
+      <!--Spacer column-->
+      <div class="col s2"></div>
+      <!--This div will contain the quote information-->
+      <div class="col s6 fader-none2" id="track-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Author</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="author"></td>
+              <td id="category"></td>
+            </tr>
+          <tbody>
+        <table>
+      </div>
+    </div>
+
+    
+    <!--Weather Table Title-->
+    <div class="row" id="row-pad">
+      <a name="weather"></a>
+      <div class="col s12">
+        <h3 class="teal-text teal-lighten-2 weather-head">Your Places</h3>
+      </div>
+    </div>
+    <!--Weather Table content-->
+    <div class="row fader-start fader-none">
+      <div class="col s1"></div>
+      <div class="col s10">
+        <table>
+          <thead>
+            <tr>
+              <th>City</th>
+              <th>Temperature</th>
+              <th>Forecast</th>
+              <th>Precipitation</th>
+            </tr>
+          </thead>
+
+          <tbody class="weather-body"></tbody>
+        </table>
+      </div>
+      <div class="col s1 test"></div>
+    </div>
+  </div>
+</body>
+<!--Javascipt styling link-->
+<script type="text/javascript" src="assets/javascript/style.js"></script>
+<!--Javascript logic link-->
+<script type="text/javascript" src="assets/javascript/project.js"></script>
+
+</html>

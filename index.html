@@ -20,7 +20,8 @@
     crossorigin="anonymous"></script>
   <!--AJAX CDN-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<!-- Firebase Reference -->
+<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 </head>
 
 <body>
@@ -53,6 +54,22 @@
         <h3 class="teal-text teal-lighten-2">Find Your Weather And Get Inspired</h3>
       </div>
     </div>
+    <form class="form-signin">
+       <img class="mb-4" src="" alt="" width="72" height="72">
+       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+       <label for="inputEmail" class="sr-only">Email address</label>
+       <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+       <label for="inputPassword" class="sr-only">Password</label>
+       <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+       <div class="checkbox mb-3">
+         <label>
+           <input type="checkbox" value="remember-me"> Remember me
+         </label>
+       </div>
+       <button class="btn btn-lg btn-primary btn-block" id="btnLogIn">Log in</button>
+       <button class="btn btn-lg btn-primary btn-block" id="btnSignUp">Sign up</button>
+       <button class="btn btn-lg btn-primary btn-block hide" id="btnLogOut">Log Out</button>
+     </form>
     <!--Row with user city input and submit button that makes the call to the weather api and also calls spotify AJAX-->
     <div class="row fader-start fader-none" id="row-pad">
       <div class="col s4">
@@ -96,6 +113,28 @@
       </div>
     </div>
       
+    <div class="row">
+      <div class="col s12 fader-none2" id="saved-quotes-table">
+        <h3 class="teal-text teal-lighten-2">Saved Quotes</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Author</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="author-saved"></td>
+              <td id="category-saved"></td>
+            </tr>
+          <tbody>
+        <table>
+      </div>
+<!-- <div class="col s1 fader-none2" id="saved-quotes-button">
+  <a class="waves-effect waves-light btn">button</a>
+</div> -->
+    </div>
       
   </div>
 </body>

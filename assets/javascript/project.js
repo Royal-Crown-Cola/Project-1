@@ -64,56 +64,7 @@ $("#submit").on("click", function(e) {
         });
     });
     
-    //Firebase configuration
-    var config = {
-        apiKey: "AIzaSyDq5A7kOXmgCqqTmOv1CkqHhZNsqHRi_mk",
-        authDomain: "project-weather-storage.firebaseapp.com",
-        databaseURL: "https://project-weather-storage.firebaseio.com",
-        projectId: "project-weather-storage",
-        storageBucket: "project-weather-storage.appspot.com",
-        messagingSenderId: "12063233925"
-      };
-      firebase.initializeApp(config);
-      var database = firebase.database();
-
-//Function that saves weather data
-function weatherStore() {
-    debugger;
-    database.ref().push({
-        city: weatherResponses[0],
-        temp: weatherResponses[1],
-        forecast: weatherResponses[2],
-        humidity: weatherResponses[3]
-    });
-}
-weatherStore();
-
-database.ref().on("child_added", function(childSnapshot) {
-    //populates the weater section with a more thorough forcast
-    var tr = $("<tr>");
-    tr.addClass("weather-font");
-
-    var td1 = $("<td>");
-    td1.html(childSnapshot.val().city);
-
-    var td2 = $("<td>");
-    td2.html(childSnapshot.val().temp);
-
-    var td3 = $("<td>");
-    td3.html(childSnapshot.val().forecast);
-
-    var td4 = $("<td>");
-    td4.html(childSnapshot.val().humidity);
-
-    tr.append(td1);
-    tr.append(td2);
-    tr.append(td3);
-    tr.append(td4);
-
-    $(".weather-body").append(tr);
-    weatherResponses = [];
-})
-
+ 
 // //Extract spotify generated token from redirect url
 // var hash = window.location.href.substr(1); //url of the current page
 // var arHash = hash.split('='); //this splits the url at the = sign

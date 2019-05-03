@@ -265,21 +265,10 @@
       }
     });
 
-        // var key = "SOJfd3xKk_kDAye_unZQwweF";
-        // var queryURL = "http://quotes.rest/qod.json?category=inspire";
-        // $.ajax({
-        //   url: queryURL,
-        //   method: "GET",
-        //   beforeSend: function (request) {
-        //     request.setRequestHeader("X-TheySaidSo-Api-Secret", key);
-        //   }
-        // }).then(function (response) {
-        //   var quote = $("#generate").html("&#34" + response.contents.quotes[0].quote + "&#34");
+          database.ref().child("quotes").push({
+            quote: quote
+          });
 
-        //   database.ref().child("quotes").push({
-        //     quote: quote
-        //   });
-        // });
       });
 
 

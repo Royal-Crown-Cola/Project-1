@@ -18,14 +18,15 @@
   const btnSignUp = $('#btnSignUp');
   const btnLogOut = $('#btnLogOut');
 
-  $("#btnLogin").on("click", function (e) {
-
 //Weather app api key
 var APIKey = "166a433c57516f51dfab1f7edaed8413";
 var quoteCat = ["management", "inspire", "funny"]
 var weatherGif = ["https://thumbs.gfycat.com/WellinformedHoarseAnnashummingbird-size_restricted.gif", "https://thumbs.gfycat.com/ImaginarySoupyHuman-small.gif",
 "https://thumbs.gfycat.com/PerfectMemorableAlaskanhusky-max-1mb.gif", "https://media.giphy.com/media/XBwWNIY6WY7g4/giphy.gif", "https://media3.giphy.com/media/NWFgmiGdF4rGo/giphy.gif",
 "https://cmgpbpeyeonthestorm.files.wordpress.com/2018/02/download.gif"];
+
+  $("#btnLogin").on("click", function (e) {
+
     e.preventDefault();
     const email = $("#inputEmail").val().trim();
     const password = $("#inputPassword").val().trim();
@@ -186,6 +187,7 @@ var day = moment().format("M/DD");
       $("#inputEmail").removeClass("hide");
       $("#inputPassword").removeClass("hide");
       $("#log-in-greeting").removeClass("hide");
+
     }
   });
 
@@ -246,18 +248,23 @@ var day = moment().format("M/DD");
                   $(".fader-start").removeClass("fader-none2");
                   $("#track-table").removeClass("fader-none2");
                   $(".fader-start").addClass("fader-go");
-                  var quote = $("#generate").html("&#34" + response.contents.quotes[0].quote + "&#34");
+                  $("#generate").html("&#34" + response.contents.quotes[0].quote + "&#34");
                   $("#author").text(response.contents.quotes[0].author);
                   $("#category").text(response.contents.quotes[0].category);
 
-                  database.ref().child("quotes").push({
-                    quote: quote
-                  });
+
                 })
               }
             });
         });
 
+        $("#btn-align").on("click", function (e) {
+          e.preventDefault();
+          var quote = $("#generate").html("&#34" + response.contents.quotes[0].quote + "&#34");
+          database.ref().child("quotes").push({
+            quote: quote.valueOf()
+          });
+        });
 
 
 

@@ -29,13 +29,13 @@ var weatherGif = ["https://thumbs.gfycat.com/WellinformedHoarseAnnashummingbird-
     e.preventDefault();
     const email = $("#inputEmail").val().trim();
     const password = $("#inputPassword").val().trim();
-
     firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
       console.log(errorCode)
       console.log(errorMessage)
+      //clear the fields
     });
   });
 
@@ -152,7 +152,6 @@ var day = moment().format("M/DD");
     
     const email = $("#inputEmail").val().trim();
     const password = $("#inputPassword").val().trim();
-    console.log(email);
 
     firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
       // function to check if email is real
@@ -174,12 +173,19 @@ var day = moment().format("M/DD");
   firebase.auth().onAuthStateChanged(firebaseUser => {
     if (firebaseUser) {
       console.log(firebaseUser)
-      // when user is not logged in, hide button
-      btnLogOut.removeClass('hide');
+      // when user is not logged in, hide login button show inputs
+      $("#btnLogOut").removeClass('hide');
+      $("#inputEmail").addClass("hide");
+      $("#inputPassword").addClass("hide");
+      $("#log-in-greeting").addClass("hide");
+
     } else {
       console.log("Not logged on")
-      // when user is logged in, display button
-      btnLogOut.addClass('hide');
+      // when user is logged in, display logout button and hide inputs
+      $("#btnLogOut").addClass('hide');
+      $("#inputEmail").removeClass("hide");
+      $("#inputPassword").removeClass("hide");
+      $("#log-in-greeting").removeClass("hide");
     }
   });
 

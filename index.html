@@ -31,9 +31,16 @@
     <div class="nav-wrapper #4db6ac teal lighten-2">
       <a href="#" class="brand-logo custom-font"><i id="my-pad" class="material-icons">cloud</i>Mood Quotes</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+
           <li><a id="login" href="#">Login</a></li>
         <li><a id="fact" href="#">Daily Fact</a></li>
         
+        <li><a href="#input">My Quotes</a></li>
+        <li><a href="#weather">My Weather</a></li>
+        <li><button class="btn btn-lg btn-primary" id="btnLogin">Log in</button></li>
+        <li><button class="btn btn-lg btn-primary" id="btnSignUp">Sign up</button></li>
+        <li><button class="btn btn-lg btn-primary hide" id="btnLogOut">Log Out</button></li>
+
       </ul>
     </div>
   </nav>
@@ -49,6 +56,13 @@
         <h1 class="teal-text teal-lighten-2" id="logo"></h1>
       </div>
     </div>
+    <form class="form-signin">
+        <img class="mb-4" src="" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal" id='log-in-greeting'>Please sign in</h1>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        </div>
+      </form>
     <!--Div with user instructions-->
     <div class="row fader-start fader-none" id="row-pad">
       <!-- <div class="col s5"></div> -->
@@ -56,22 +70,6 @@
         <h3 class="teal-text teal-lighten-2">Find Your Weather And Get Inspired</h3>
       </div>
     </div>
-    <form class="form-signin">
-       <img class="mb-4" src="" alt="" width="72" height="72">
-       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-       <label for="inputEmail" class="sr-only">Email address</label>
-       <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-       <label for="inputPassword" class="sr-only">Password</label>
-       <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-       <div class="checkbox mb-3">
-         <label>
-           <input type="checkbox" value="remember-me"> Remember me
-         </label>
-       </div>
-       <button class="btn btn-lg btn-primary btn-block" id="btnLogIn">Log in</button>
-       <button class="btn btn-lg btn-primary btn-block" id="btnSignUp">Sign up</button>
-       <button class="btn btn-lg btn-primary btn-block hide" id="btnLogOut">Log Out</button>
-     </form>
     <!--Row with user city input and submit button that makes the call to the weather api and also calls spotify AJAX-->
     <div class="row fader-start fader-none" id="row-pad">
       <div class="col s3">

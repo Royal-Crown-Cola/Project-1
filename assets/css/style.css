@@ -3,6 +3,21 @@
     
 } */
 
+html, body {
+    margin:0;
+    padding:0
+}
+
+.body {
+    background-image: url(http://neurosynaptic.com/wp-content/uploads/2014/10/001-subtle-light-pattern-background-texture-vol5.jpg);
+    -webkit-animation: slide 20s linear infinite;
+}
+
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+
 .weather-page {
     height:100vh;
 }
@@ -64,7 +79,7 @@ h1 {
 
 h3 {
     font-family: 'Permanent Marker', cursive;
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
     text-decoration: underline;
 }
@@ -73,6 +88,31 @@ h4 {
     font-family: 'Permanent Marker', cursive;
     font-size: 25px;
     text-align: center;
+}
+
+h5 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 25px;
+    text-align: center;
+}
+
+#btn-align {
+    text-align: center;
+}
+
+.btn-style {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 17px;
+    padding:10px;
+    color:ivory;
+    background-color: rgb(2, 173, 136);
+}
+
+.btn-style:hover {
+    cursor: pointer;
+    background-color: ivory;
+    color:rgb(13, 216, 172);
+    border: solid 1px black;
 }
 
 thead {
@@ -85,25 +125,4 @@ tbody {
     font-size: 15px;
 }
 
-#weather-playlist {
-    font-family: 'Permanent Marker', cursive;
 
-}
-
-.button-style {
-    font-family: 'Permanent Marker', cursive;
-    font-size:20px; 
-    color:white;
-    padding: 15px;
-}
-
-.button-style:hover {
-    cursor: pointer;
-    border: 1px solid black;
-    background-color: white;
-    color:aqua;
-}
-
-.weather-font {
-    font-family: 'Permanent Marker', cursive;
-}

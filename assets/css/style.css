@@ -3,6 +3,11 @@
     
 } */
 
+::placeholder {
+    color: red;
+    opacity: .4;
+  }
+
 html, body {
     margin:0;
     padding:0

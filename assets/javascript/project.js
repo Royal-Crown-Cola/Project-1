@@ -167,7 +167,7 @@ var day = moment().format("M/DD");
       console.log(errorCode)
       console.log(errorMessage)
     });
-  });
+
 
   // checks to see if users are logged in or not
   firebase.auth().onAuthStateChanged(firebaseUser => {

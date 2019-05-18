@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <!--Google Fonts-->
   <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
   <!--Materialize CDN's-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -21,129 +22,143 @@
   <!--AJAX CDN-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-<!-- Firebase Reference -->
-<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 </head>
 
-<body class="body">
-  <!--Nav Bar-->
-  <nav class="my-nav">
-    <div class="nav-wrapper #4db6ac teal lighten-2">
-      <a href="#" class="brand-logo custom-font"><i id="my-pad" class="material-icons">cloud</i>Mood Quotes</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-
-        <li><a id="fact" href="#">Daily Fact</a></li>
-        <li><a href="#input">My Quotes</a></li>
-        <li><a href="#weather">My Weather</a></li>
-      </ul>
-    </div>
-  </nav>
-  <!--Home page Image and logo render div-->
-  <div class="container">
-    <div class="row" id="row-pad">
-      <div class="col s4" id="gif-input">
-        <img id="img-size" class="fader-start fader-none"
-          src="https://cmgpbpeyeonthestorm.files.wordpress.com/2018/02/download.gif" alt="weather gif">
-      </div>
-      <!-- <div class="col s1"></div> -->
-      <div class="col s8">
-        <h1 class="teal-text teal-lighten-2" id="logo"></h1>
-      </div>
-    </div>
+<body>
+  <section class="login">
+    <div class="container">
+    <div class="row log-margin">
     <form class="form-signin">
-        <img class="mb-4" src="" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal" id='log-in-greeting'>Please sign in</h1>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        </div>
-        <a class="btn btn-lg btn-primary" id="btnLogin">Log in</a>
-          <a class="btn btn-lg btn-primary" id="btnSignUp">Sign up</a>
-          <a class="btn btn-lg btn-primary hide" id="btnLogOut">Log Out</a>
-      </form>
-    <!--Div with user instructions-->
-    <div class="row fader-start fader-none" id="row-pad">
-      <!-- <div class="col s5"></div> -->
-      <div class="col s12">
-        <h3 class="teal-text teal-lighten-2">Find Your Weather And Get Inspired</h3>
-      </div>
-    </div>
-    <!--Row with user city input and submit button that makes the call to the weather api and also calls spotify AJAX-->
-    <div class="row fader-start fader-none" id="row-pad">
-      <div class="col s3">
-        <!--Takes in user input and submits-->
-        <input class="city-input" id="input_text" type="text" data-length="10" placeholder="Enter Your City">
-        <a class="waves-effect waves-light btn" id="submit">Submit</a>
-      </div>
-      <!--City name will be stored here-->
-      <div class="col s3">
-        <h5 class="teal-text teal-lighten-2" id="city-input"></h5>
-      </div>
-      <!--City temperature will be stored here-->
-      <div class="col s3">
-        <h5 class="teal-text teal-lighten-2" id="temp-input"></h5>
-      </div>
-      <div class="col s3">
-        <h5 class="teal-text teal-lighten-2" id="for-input"></h5>
-      </div>
-    </div>
-    <!--Row containing quote info-->
-    <div class="row" id="row-pad">
-      <!--This div will contain the quote-->
-      <div class="col s12">
-        <h4 id="generate"></h4>
-      </div>
-    </div>
-    <!--Row that allows you to save a quote to a database but requires login information-->
-    <div class="row" id="row-pad">
-      <div class="col s12 fader-start fader-none2" id="btn-align">
-        <button class="btn-style">Save This Quote</button>
-      </div>
-    </div>
-    <!--Row that gives you the quote information-->
-    <div class="row">
-      <div class="col s12 fader-none2" id="track-table">
-        <h3 class="teal-text teal-lighten-2">Quote Info</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Author</th>
-              <th>Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td id="author"></td>
-              <td id="category"></td>
-            </tr>
-          <tbody>
-        <table>
-      </div>
-    </div>
-      
-    <div class="row">
-      <div class="col s12 fader-none2" id="saved-quotes-table">
-        <h3 class="teal-text teal-lighten-2">Saved Quotes</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Author</th>
-              <th>Category</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td id="author-saved"></td>
-              <td id="category-saved"></td>
-            </tr>
-          <tbody>
-        <table>
-      </div>
-<!-- <div class="col s1 fader-none2" id="saved-quotes-button">
-  <a class="waves-effect waves-light btn">button</a>
-</div> -->
-    </div>
-      
+      <img class="mb-4" src="" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal" id='log-in-greeting'></h1>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <a class="btn btn-lg btn-primary" id="btnSignUp">Sign up</a>
+    </form>
   </div>
+  </div>
+  </section>
+  <section class="body">
+    <!--Nav Bar-->
+    <header id="myHeader">
+    <nav class="my-nav">
+      <div class="nav-wrapper #00b0ff light-blue accent-3">
+        <a href="#" class="brand-logo custom-font"><i id="my-pad" class="material-icons">cloud</i>Mood Quotes</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a id="email-input" href="#"></a></li>
+          <li><a id="quoteFind" href="#">New Place</a></li>
+          <li><a id="fact" href="#">Daily Advice</a></li>
+
+        </ul>
+      </div>
+    </nav>
+  </header>
+    <!--Home page Image and logo render div-->
+    <div class="container">
+      <div class="row" id="row-pad">
+        <div class="col s4" id="gif-input">
+          <img id="img-size" class="fader-start fader-none"
+            src="https://cmgpbpeyeonthestorm.files.wordpress.com/2018/02/download.gif" alt="weather gif">
+        </div>
+        <!-- <div class="col s1"></div> -->
+        <div class="col s8">
+          <h1 id="logo"></h1>
+        </div>
+      </div>
+      <!--Div with user instructions-->
+      <div class="row fader-start fader-none" id="row-pad">
+        <!-- <div class="col s5"></div> -->
+        <div class="col s12">
+          <h3>Find Your Weather And Get Inspired</h3>
+        </div>
+      </div>
+      <!--Row with user city input and submit button that makes the call to the weather api and also calls spotify AJAX-->
+      <div class="row fader-start fader-none" id="row-pad">
+        <div class="col s3">
+          <!--Takes in user input and submits-->
+          <input class="city-input" id="input_text" type="text" data-length="10" placeholder="Enter Your City">
+          <a class="waves-effect waves-light btn nav" id="submit" href="#info">Submit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="my-info" id="info">
+    <!--Row containing quote info-->
+    <div class="row" id="info-pad">
+      <!--City name will be stored here-->
+      <div class="col s3 weather-gif fader-start fader-none2">
+
+      </div>
+      <div class="col s3">
+          <h5 class="color-change" id="city-input"></h5>
+        </div>
+        <!--City temperature will be stored here-->
+        <div class="col s3">
+          <h5 class="color-change" id="temp-input"></h5>
+        </div>
+        <div class="col s3">
+          <h5 class="color-change" id="for-input"></h5>
+        </div>
+        <!--This div will contain the quote-->
+        <div class="col s12 fader-start fader-none2">
+          <h4 class="light-blue-text accent-3" id="generate"></h4>
+        </div>
+      </div>
+      <!--Row that allows you to save a quote to a database but requires login information-->
+      <div class="row" id="row-pad">
+        <div class="col s12 fader-start fader-none2" id="btn-align">
+          <a class="btn-style" id="trivia-btn" href="#trivia">Try Some Trivia</a>
+        </div>
+      </div>
+      <!--Row that gives you the quote information-->
+      <div class="row">
+        <div class="col s12 fader-none2" id="track-table">
+          <h3>Quote Info</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Author</th>
+                <th>Category</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="author"></td>
+                <td id="category"></td>
+              </tr>
+            <tbody>
+              <table>
+        </div>
+      </div>
+  </section>
+  <section class="trivia-section" id="trivia">
+    <div class="row triv-margin">
+      <div class="col s12 question-pad">
+        <h3 class="teal-text teal-lighten-2" id="triv-ques"></h3>
+      </div>
+    </div>
+    <div class="container">
+    <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s12">
+              <input type="text" id="textarea1" class="materialize-textarea user-answer" placeholder="your answer">
+            </div>
+          </div>
+        </form>
+      </div>
+      <a class="btn btn-lg btn-primary" id="triv-submit">Submit</a>
+      <div class="row">
+        <div class="col s12">
+          <h3 class="teal-text teal-lighten-2" id="stats"></h3>
+        </div>
+      </div>
+      <div class="row new-but btn-none">
+          <div class="col s12">
+              <a class="btn btn-lg btn-primary" id="new-question">New Question</a>
+          </div>
+        </div>
+    </div>
+  </section>
 </body>
 <!--Javascipt styling link-->
 <script type="text/javascript" src="assets/javascript/style.js"></script>
@@ -151,5 +166,3 @@
 <script type="text/javascript" src="assets/javascript/project.js"></script>
 
 </html>
-
-
